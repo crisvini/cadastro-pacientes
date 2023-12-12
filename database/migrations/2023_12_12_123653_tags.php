@@ -10,8 +10,6 @@ return new class extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('patients');
             $table->string('name');
             $table->string('color');
             $table->timestamps();
