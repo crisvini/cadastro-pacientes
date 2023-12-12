@@ -9,8 +9,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-white">
-    <div class="container mx-auto">
+<header class="w-100 py-1 mb-4 bg-primary-subtle">
+    <div class="container-xl">
+        <h2 class="text-primary-emphasis">Cadastro de Pacientes</h2>
+    </div>
+</header>
+
+<body>
+    <div class="container-xl">
         <livewire:patient-form />
     </div>
 </body>
