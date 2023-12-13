@@ -41,12 +41,12 @@
                 class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                 Tags
             </label>
-            <select multiple id="tags"
+            <select wire:model="tags" multiple id="tags"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option value="US" class="text-blue-300">United States</option>
-                <option value="CA" class="text-blue-400">Canada</option>
-                <option value="FR" class="text-blue-500">France</option>
-                <option value="DE" class="text-blue-600">Germany</option>
+                <option value="9" class="text-blue-300">United States</option>
+                <option value="10" class="text-blue-400">Canada</option>
+                <option value="11" class="text-blue-500">France</option>
+                <option value="12" class="text-blue-600">Germany</option>
             </select>
         </div>
         <div class="relative col-span-3">

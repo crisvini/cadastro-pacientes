@@ -24,6 +24,9 @@ class TagForm extends Component
             'name' => $this->name,
             'color' => $this->color
         ]);
+
+        $this->name = '';
+        $this->color = '';
         $this->toast()->success('Tag criada com sucesso!');
     }
 
