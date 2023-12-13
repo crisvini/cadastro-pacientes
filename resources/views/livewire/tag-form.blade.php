@@ -4,8 +4,8 @@
         <label for="nome" class="text-secondary ms-3">Nome</label>
     </div>
     <div class="form-floating mb-3 col-12 col-lg-4">
-        <input type="color" class="form-control form-control-color w-100" id="color" value="#563d7c"
-            title="Choose your color">
+        <input type="color" class="form-control form-control-color w-100" id="color" value="#999999"
+            title="Selecione uma cor" wire:model="color">
         <label for="color" class="form-label h-50 my-0 py-0 mt-2 ms-2">Cor</label>
     </div>
     <div class="col-12">
