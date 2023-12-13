@@ -26,7 +26,6 @@ class TagForm extends Component
             $this->toast()->error('Erro na inserção de tag, tente novamente mais tarde');
         }
 
-
         $this->dispatch('tag-created');
         $this->name = '';
         $this->color = '';
