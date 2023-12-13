@@ -16,8 +16,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<header class="w-full mb-7 py-2 bg-blue-200">
-    <div class="mx-auto max-w-screen-xl">
+<header class="w-full mb-7 py-3 bg-blue-200">
+    <div class="mx-3 lg:mx-auto max-w-screen-xl">
         <h2 class="text-blue-900 text-2xl"><i class="fa-regular fa-hospital"></i>&nbsp;&nbsp;Cadastro de Pacientes
         </h2>
     </div>
@@ -25,8 +25,7 @@
 
 <body>
     <x-toast />
-    <div class="mx-auto max-w-screen-xl">
-
+    <div class="mx-3 lg:mx-auto max-w-screen-xl">
         <div id="accordion-collapse" data-accordion="collapse">
             <h2 id="accordion-collapse-heading-1">
                 <button type="button"
