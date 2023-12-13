@@ -42,6 +42,7 @@ class PatientForm extends Component
             $this->toast()->error('Erro na inserção de paciente, tente novamente mais tarde');
         }
 
+        $this->dispatch('patient-created');
         $this->name = '';
         $this->address = '';
         $this->date_of_birth = '';
