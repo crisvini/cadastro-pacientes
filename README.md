@@ -27,6 +27,8 @@ Passos para executar:
     ./vendor/bin/sail composer install
 
     ./vendor/bin/sail npm i
+
+    ./vendor/bin/sail artisan migrate:fresh
         
     ./vendor/bin/sail npm run dev
 
