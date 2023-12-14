@@ -11,46 +11,46 @@
         </div>
     </div>
 
-    <x-modal title="Paciente {{ $patient_id_modal }} - {{ $patient_name_modal }}" size="5xl" wire="patient_modal">
+    <x-modal title="Paciente {{ $patient_id_modal }}" size="5xl" wire="patient_modal" persistent>
         <form wire:submit="updatePatient">
             <div class="grid gap-6 md:grid-cols-3">
                 <div class="relative col-span-3 lg:col-span-2">
-                    <input wire:model="patient_name_modal" type="text" id="name"
+                    <input wire:model="patient_name_modal" type="text" id="patient_name_modal"
                         value="{{ $patient_name_modal }}"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('name') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('patient_name_modal') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " />
                     <label for="name"
-                        class="absolute text-sm @error('name') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        class="absolute text-sm @error('patient_name_modal') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                         Nome
                     </label>
                 </div>
                 <div class="relative col-span-3 lg:col-span-1">
                     <input wire:model="patient_date_of_birth_modal" type="date" id="patient_date_of_birth_modal"
                         value="{{ $patient_date_of_birth_modal }}"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('date_of_birth') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('patient_date_of_birth_modal') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " />
                     <label for="date_of_birth"
-                        class="absolute text-sm @error('date_of_birth') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        class="absolute text-sm @error('patient_date_of_birth_modal') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                         Nascimento
                     </label>
                 </div>
                 <div class="relative col-span-3 lg:col-span-2">
-                    <input wire:model="patient_address_modal" type="text" id="address"
+                    <input wire:model="patient_address_modal" type="text" id="patient_address_modal"
                         value="{{ $patient_address_modal }}"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('address') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('patient_address_modal') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " />
                     <label for="address"
-                        class="absolute text-sm @error('address') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        class="absolute text-sm @error('patient_address_modal') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                         Endereço
                     </label>
                 </div>
                 <div class="relative col-span-3 lg:col-span-1">
-                    <input x-mask="(99) 99999-9999" wire:model="patient_phone_modal" type="text" id="phone"
+                    <input x-mask="(99) 99999-9999" wire:model="patient_phone_modal" type="text" id="patient_phone_modal"
                         value="{{ $patient_phone_modal }}"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('phone') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('patient_phone_modal') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " />
                     <label for="phone"
-                        class="absolute text-sm @error('phone') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        class="absolute text-sm @error('patient_phone_modal') text-red-500 @enderror text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
                         Telefone
                     </label>
                 </div>

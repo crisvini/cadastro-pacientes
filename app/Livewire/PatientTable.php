@@ -63,7 +63,7 @@ class PatientTable extends Component
         $patient->phone = $validated['patient_phone_modal'];
         $patient->save();
 
-        $this->getPatients();
+        $this->dispatch('patient-created');
 
         $this->patient_modal = false;
         $this->toast()->success('Paciente atualizado com sucesso!');
