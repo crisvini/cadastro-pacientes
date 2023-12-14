@@ -56,6 +56,15 @@ class PatientTable extends Component
             'patient_phone_modal' => 'required',
         ]);
 
+        $patient = Patient::find($this->patient_id_modal);
+        $patient->name = $validated['patient_name_modal'];
+        $patient->address = $validated['patient_address_modal'];
+        $patient->date_of_birth = $validated['patient_date_of_birth_modal'];
+        $patient->phone = $validated['patient_phone_modal'];
+        $patient->save();
+
+        $this->getPatients();
+
         $this->patient_modal = false;
         $this->toast()->success('Paciente atualizado com sucesso!');
     }
