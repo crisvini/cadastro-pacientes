@@ -32,18 +32,20 @@
                     <td class="px-6 py-4"> {{ \Carbon\Carbon::parse($patient->date_of_birth)->format('d/m/Y') }}</td>
                     <td class="px-6 py-4"> {{ $patient->address }} </td>
                     <td class="px-6 py-4">
-                        {{ '(' . substr($patient->phone, 0, 2) . ') ' . substr($patient->phone, 3, 5) . '-' . substr($patient->phone, 8, 4) }}
+                        {{ '(' . substr($patient->phone, 0, 2) . ') ' . substr($patient->phone, 2, 5) . '-' . substr($patient->phone, 7, 4) }}
                     </td>
                     <td class="px-6 py-4">
-                        @forelse (json_decode($patient['tags_info'], true) as $tagId => $tagInfo)
-                            <span
-                                class="bg-blue-100 text-stone-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:text-blue-300"
-                                style="background-color: {{ $tagInfo['tag_color'] }}">
-                                {{ $tagInfo['tag_name'] }}
-                            </span>
-                        @empty
+                        @if (!empty($patient['tags_info']))
+                            @foreach (json_decode($patient['tags_info'], true) as $tagId => $tagInfo)
+                                <span
+                                    class="bg-blue-100 text-stone-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:text-blue-300"
+                                    style="background-color: {{ $tagInfo['tag_color'] }}">
+                                    {{ $tagInfo['tag_name'] }}
+                                </span>
+                            @endforeach
+                        @else
                             Nenhuma tag encontrada
-                        @endforelse
+                        @endif
                     </td>
                 </tr>
             @empty

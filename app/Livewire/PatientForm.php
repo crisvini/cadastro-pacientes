@@ -22,6 +22,8 @@ class PatientForm extends Component
 
     public function save()
     {
+        $this->phone = preg_replace('/[^0-9]/', '', $this->phone);
+
         $validated = $this->validate([
             'name' => 'required',
             'address' => 'required',
