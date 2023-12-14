@@ -71,7 +71,7 @@
                     </select>
                 </div> --}}
                 <div class="relative col-span-3 flex justify-end">
-                    <button
+                    <button wire:click="deletePatient"
                         class="text-red-600 bg-gray-300 me-3 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"><i
                             class="fa-regular fa-trash-can"></i></button>
                     <button type="submit"
