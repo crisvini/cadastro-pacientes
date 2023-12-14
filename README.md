@@ -8,6 +8,10 @@ docker run --rm \
     laravelsail/php83-composer:latest \
     composer install --ignore-platform-reqs
 
-dar um composer install e um npm i
+sail up -d
+
+sail composer install
+
+sail npm i
 
 ./vendor/bin/sail up -d
