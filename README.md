@@ -1,4 +1,4 @@
-Sistema de cadastro de pacientes com tags personalizadas.
+# Sistema de cadastro de pacientes com tags personalizadas.
 
 Projeto desenvolvido com as seguintes tecnologias:
 - [Laravel](https://laravel.com/)
