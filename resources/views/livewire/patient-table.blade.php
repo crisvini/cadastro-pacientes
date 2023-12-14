@@ -13,9 +13,10 @@
 
     <x-modal title="Paciente {{ $patient_id_modal }} - {{ $patient_name_modal }}" size="5xl" wire="patient_modal">
         <form wire:submit="updatePatient">
-            <div class="grid gap-6 mb-6 md:grid-cols-3">
+            <div class="grid gap-6 md:grid-cols-3">
                 <div class="relative col-span-3 lg:col-span-2">
-                    <input wire:model="patient_name_modal" type="text" id="name" value="{{ $patient_name_modal }}"
+                    <input wire:model="patient_name_modal" type="text" id="name"
+                        value="{{ $patient_name_modal }}"
                         class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('name') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " />
                     <label for="name"
@@ -34,7 +35,8 @@
                     </label>
                 </div>
                 <div class="relative col-span-3 lg:col-span-2">
-                    <input wire:model="patient_address_modal" type="text" id="address" value="{{ $patient_address_modal }}"
+                    <input wire:model="patient_address_modal" type="text" id="address"
+                        value="{{ $patient_address_modal }}"
                         class="block px-2.5 pb-2.5 pt-4 w-full text-sm @error('address') border-red-500 @enderror text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " />
                     <label for="address"
@@ -68,10 +70,15 @@
                         @endforelse
                     </select>
                 </div> --}}
-                <div class="relative col-span-3">
+                <div class="relative col-span-3 flex justify-end">
+                    <button
+                        class="text-red-600 bg-gray-300 me-3 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"><i
+                            class="fa-regular fa-trash-can"></i></button>
                     <button type="submit"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Salvar</button>
                 </div>
+                {{-- <div class="relative col-span-2">
+                </div> --}}
             </div>
         </form>
 
@@ -95,7 +102,7 @@
                         {{ $patient->id }}
                     </th>
                     <td class="px-6 py-4">
-                        <a class="underline italic text-blue-500" wire:click="openModal({{ $patient }})">
+                        <a class="underline italic text-blue-500 cursor-pointer" wire:click="openModal({{ $patient }})">
                             {{ $patient->name }}
                         </a>
                     </td>
