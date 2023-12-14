@@ -10,7 +10,9 @@ Projeto desenvolvido com as seguintes tecnologias:
 **Necessário ter docker para executar o projeto
 
 Passos para executar:
+
 1 - Clonar o projeto;
+
 2 - Entrar na pasta do projeto e executar os seguintes comandos na ordem a seguir:
 
     docker run --rm \
@@ -25,8 +27,9 @@ Passos para executar:
     ./vendor/bin/sail composer install
 
     ./vendor/bin/sail npm i
-
+        
     ./vendor/bin/sail npm run dev
 
 3 - Abrir o navegador e inserir "localhost" no campo;
+
 4 - Explorar o projeto!;
