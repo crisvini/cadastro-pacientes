@@ -18,7 +18,7 @@ class PatientForm extends Component
     public $date_of_birth = '';
     public $phone = '';
     public $tags = [];
-    public $existantTags = [];
+    public $existant_tags = [];
 
     public function save()
     {
@@ -56,7 +56,7 @@ class PatientForm extends Component
     #[On('tag-created')]
     public function getTags()
     {
-        $this->existantTags = Tag::all();
+        $this->existant_tags = Tag::all();
     }
 
     public function mount()

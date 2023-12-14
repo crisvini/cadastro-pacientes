@@ -14,11 +14,12 @@ class PatientTable extends Component
 
     public $search = '';
     public $patients = [];
-
-    public function updatedSearch()
-    {
-        $this->getPatients();
-    }
+    public $patient_id_modal = '';
+    public $patient_name_modal = '';
+    public $patient_address_modal = '';
+    public $patient_date_of_birth_modal = '';
+    public $patient_phone_modal = '';
+    public $patient_modal = false;
 
     #[On('patient-created')]
     public function getPatients()
@@ -42,6 +43,31 @@ class PatientTable extends Component
         } catch (\Throwable $th) {
             $this->toast()->error('Erro na consulta de paciente, tente novamente mais tarde');
         }
+    }
+
+    public function updatePatient()
+    {
+        $this->patient_phone_modal = preg_replace('/[^0-9]/', '', $this->patient_phone_modal);
+
+        $validated = $this->validate([
+            'patient_name_modal' => 'required',
+            'patient_address_modal' => 'required',
+            'patient_date_of_birth_modal' => 'required',
+            'patient_phone_modal' => 'required',
+        ]);
+
+        $this->patient_modal = false;
+        $this->toast()->success('Paciente atualizado com sucesso!');
+    }
+
+    public function openModal($patient)
+    {
+        $this->patient_modal = true;
+        $this->patient_id_modal = $patient['id'];
+        $this->patient_name_modal = $patient['name'];
+        $this->patient_address_modal = $patient['address'];
+        $this->patient_date_of_birth_modal = \Carbon\Carbon::parse($patient['date_of_birth'])->format('Y-m-d');
+        $this->patient_phone_modal = '(' . substr($patient['phone'], 0, 2) . ') ' . substr($patient['phone'], 2, 5) . '-' . substr($patient['phone'], 7, 4);
     }
 
     public function mount()
