@@ -28,7 +28,7 @@ Passos para executar:
 
     ./vendor/bin/sail artisan migrate:fresh
         
-    ./vendor/bin/sail npm run dev
+    ./vendor/bin/sail npm run build
 
 3 - Abrir o navegador e inserir "localhost" no campo;
 
